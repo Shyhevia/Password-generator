@@ -15,6 +15,26 @@ function generatePassword() {
   var getspecialchar = confirm("Will Include Special Characters");
   var gernumb = confirm("Will Include Numbers");
 
+  if(!getCapitalchar && !getlowerchar && ! getspecialchar && ! getnumb){
+    return "Unable to generate password"
+  }
+  let acceptedChar = []
+  if (getCapitalchar){
+    acceptedChar = acceptedChar.comcat(Capitalchar)
+  }
+  if (getlowerchar){
+    acceptedChar = acceptedChar.comcat(lowerchar)
+  }
+  if (specialchar){
+    acceptedChar = acceptedChar.comcat(specialchar)
+  }
+  if (getnumb){
+    acceptedChar = acceptedChar.comcat(numb)
+  }
+  var password= ""
+  for (let i=0;i<getpasswordlength;i++){
+    
+  }
 
 }
 
