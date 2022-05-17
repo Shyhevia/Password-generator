@@ -37,7 +37,9 @@ function generatePassword() {
     password+=acceptedChar[index]
   }
   console.log(password)
+  return password
 }
+
 
 // Write password to the #password input
 function writePassword() {
