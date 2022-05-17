@@ -13,29 +13,30 @@ function generatePassword() {
   var getCapitalchar = confirm("Will Include Capital Charactes.");
   var getlowerchar = confirm("Will Include lower Charaters");
   var getspecialchar = confirm("Will Include Special Characters");
-  var gernumb = confirm("Will Include Numbers");
+  var getnumb = confirm("Will Include Numbers");
 
   if(!getCapitalchar && !getlowerchar && ! getspecialchar && ! getnumb){
     return "Unable to generate password"
   }
   let acceptedChar = []
   if (getCapitalchar){
-    acceptedChar = acceptedChar.comcat(Capitalchar)
+    acceptedChar = acceptedChar.concat(Capitalchar)
   }
   if (getlowerchar){
-    acceptedChar = acceptedChar.comcat(lowerchar)
+    acceptedChar = acceptedChar.concat(lowerchar)
   }
   if (specialchar){
-    acceptedChar = acceptedChar.comcat(specialchar)
+    acceptedChar = acceptedChar.concat(specialchar)
   }
   if (getnumb){
-    acceptedChar = acceptedChar.comcat(numb)
+    acceptedChar = acceptedChar.concat(numb)
   }
   var password= ""
   for (let i=0;i<getpasswordlength;i++){
-    
+    var index = Math.floor(Math.random() * acceptedChar.length)
+    password+=acceptedChar[index]
   }
-
+  console.log(password)
 }
 
 // Write password to the #password input
